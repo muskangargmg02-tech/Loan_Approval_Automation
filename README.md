@@ -160,8 +160,7 @@ Shows:
 
 ## Auto Approval Email
 
-```html
-<img src="./approval-email.png" width="1000"/>
+<img src="./loan-dataset.png" width="1000"/>
 ```
 
 Automated approval notification sent to eligible applicants.
