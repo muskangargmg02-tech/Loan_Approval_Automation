@@ -1,5 +1,3 @@
-Based on your PPT, here is a professional GitHub README aligned completely with your **AI-Powered Loan Approval Automation using n8n** project.
-
 You can create a file named **README.md** and paste the following content:
 
 # 🏦 AI-Powered Loan Approval Automation using n8n
