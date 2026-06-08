@@ -145,7 +145,7 @@ Automatically notify:
 ## Loan Approval Dataset
 
 ```html
-<img src="./loan-dataset.png" width="1000"/>
+<img src="./loan_dataset.png" width="1000"/>
 ```
 
 Shows:
@@ -160,7 +160,7 @@ Shows:
 
 ## Auto Approval Email
 
-<img src="./Approval-email.png.png" width="1000"/>
+<img src="./approval-email.png" width="1000"/>
 ```
 
 Automated approval notification sent to eligible applicants.
