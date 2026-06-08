@@ -1,276 +1,340 @@
-Based on your PPT, here is a professional **README.md** you can directly use in your GitHub repository.
+Based on your PPT, here is a professional GitHub README aligned completely with your **AI-Powered Loan Approval Automation using n8n** project.
 
-````md
-# AI-Powered Loan Approval Automation
+You can create a file named **README.md** and paste the following content:
 
-## Overview
+# 🏦 AI-Powered Loan Approval Automation using n8n
 
-AI-Powered Loan Approval Automation is a financial process automation project developed using **n8n**, **Google Sheets**, and **Gmail Integration**. The system automates loan application evaluation by applying predefined credit, debt-to-income (DTI), and AML/PEP compliance rules to streamline decision-making.
-
-This project demonstrates how low-code automation can improve efficiency, reduce operational costs, and enhance compliance in modern lending processes.
-
----
-
-## Project Objective
-
-Traditional loan approval processes are often slow, expensive, and prone to human error. This project aims to:
-
-- Automate loan application screening
-- Reduce approval turnaround time
-- Improve consistency in decision-making
-- Ensure AML/PEP compliance checks
-- Minimize manual intervention
+<p align="center">
+  Intelligent Loan Processing • Credit Risk Assessment • AML Screening • Workflow Automation
+</p>
 
 ---
 
-## Problem Statement
+# 📌 Project Overview
 
-Manual loan approval processes face several challenges:
+This project automates the loan approval process using **n8n**, **Google Sheets**, **Gmail**, and rule-based decision logic.
 
-- Approval cycles of 3–5 days
-- High operational costs
-- Human errors in risk assessment
-- Limited scalability
-- Compliance risks due to manual AML screening
+The workflow evaluates loan applications based on applicant financial data, credit score, debt-to-income ratio (DTI), and AML/PEP watchlist screening. Based on predefined business rules, applications are automatically approved, rejected, or routed for manual compliance review.
 
-The proposed n8n workflow addresses these issues through intelligent automation.
+This project demonstrates how financial institutions can leverage workflow automation to improve efficiency, reduce operational costs, and strengthen compliance monitoring.
 
 ---
 
-## Technology Stack
+# 🎯 Objectives
 
-- n8n (Workflow Automation Platform)
-- Google Sheets (Data Source)
-- Gmail API (Email Notifications)
-- Rule-Based Decision Engine
-- AML/PEP Watchlist Screening
-
----
-
-## Dataset Details
-
-A custom dataset of **40 loan applications** was created containing:
-
-| Field | Description |
-|---------|-------------|
-| Application_ID | Unique Loan ID |
-| Applicant_Name | Applicant Name |
-| Annual_Income_USD | Annual Income |
-| Loan_Amount_Requested | Requested Loan Amount |
-| Credit_Score | Credit Score (300–850) |
-| Debt_To_Income_Ratio | Debt-to-Income Ratio |
-| Watchlist_Match_Pct | AML/PEP Match Percentage |
-| System_Initial_Action | Initial System Decision |
-| Max_Allowable_EMI | Maximum Eligible EMI |
-| Decision_Primary_Basis | Reason for Decision |
+* Automate loan approval decisions
+* Reduce manual processing time
+* Improve decision accuracy
+* Implement AML & PEP screening
+* Enhance compliance coverage
+* Demonstrate AI-driven financial automation
 
 ---
 
-## Workflow Architecture
-
-### Step 1: Trigger Layer
-- Manual or Scheduled Trigger
-- Reads loan application data from Google Sheets
-
-### Step 2: Rules Evaluation Layer
-The workflow evaluates:
-
-- Credit Score
-- Debt-to-Income Ratio (DTI)
-- AML Watchlist Match
-
-### Step 3: Decision Layer
-
-#### Auto Approve
-Conditions:
-- Credit Score ≥ 600
-- DTI ≤ 0.50
-- Watchlist < 0.30
-
-#### Auto Reject
-Conditions:
-- Credit Score < 560
-- OR DTI > 0.55
-
-#### Manual Review
-Conditions:
-- Watchlist ≥ 0.30 and < 0.80
-
-#### AML Escalation
-Conditions:
-- Watchlist ≥ 0.80
-- OR PEP Match Found
-
-### Step 4: Notification Layer
-
-Automated Gmail notifications:
-
-- Approval Email
-- Rejection Email
-- Compliance Alert Email
-- AML Escalation Email
-
----
-
-## n8n Workflow Flow
-
-Trigger
-↓
-Read Google Sheet
-↓
-Credit & DTI Validation
-↓
-Decision Routing
-├── Auto Approve
-├── Auto Reject
-├── Manual Review
-└── AML/PEP Escalation
-↓
-Send Email Notifications
-
----
-
-## Sample Decision Logic
+# 🏗️ Solution Architecture
 
 ```text
-Credit ≥ 600 AND DTI ≤ 0.50 AND Watchlist < 0.30
-→ AUTO APPROVE
-
-Credit < 560 OR DTI > 0.55
-→ AUTO REJECT
-
-Watchlist ≥ 0.30 AND < 0.80
-→ MANUAL REVIEW
-
-Watchlist ≥ 0.80 OR PEP Match
-→ AML ESCALATION + REJECTION
-````
-
----
-
-## Workflow Results
-
-Dataset Processed: **40 Applications**
-
-| Decision      | Count |
-| ------------- | ----- |
-| Auto Approved | 18    |
-| Auto Rejected | 11    |
-| Manual Review | 11    |
+Google Sheets Dataset
+          ↓
+     n8n Workflow
+          ↓
+    Data Validation
+          ↓
+ Credit & DTI Evaluation
+          ↓
+ AML / PEP Screening
+          ↓
+ Decision Engine
+          ↓
+ ┌─────────────┬─────────────┬─────────────┐
+ │             │             │
+Approve     Reject     Manual Review
+ │             │             │
+ └────── Email Notifications ──────┘
+```
 
 ---
 
-## Business Impact
+# ⚙️ Workflow Process
 
-| Parameter        | Manual Process | Automated Process |
-| ---------------- | -------------- | ----------------- |
-| Processing Time  | 3–5 Days       | < 2 Minutes       |
-| Human Effort     | 100%           | 27%               |
-| Error Rate       | 35%            | < 3%              |
-| Cost/Application | $2400          | $180              |
-| Throughput/Day   | 20–30          | 500+              |
+### Step 1 — Read Loan Dataset
+
+Import applicant records from Google Sheets.
+
+### Step 2 — Evaluate Financial Criteria
+
+Analyze:
+
+* Credit Score
+* Debt-to-Income Ratio (DTI)
+* Income Eligibility
+
+### Step 3 — AML & PEP Screening
+
+Perform watchlist checks to identify:
+
+* AML Risks
+* PEP Matches
+* Compliance Concerns
+
+### Step 4 — Decision Routing
+
+Applications are classified into:
+
+* Auto-Approve
+* Auto-Reject
+* Manual Review
+
+### Step 5 — Update Records
+
+Store:
+
+* Approval Status
+* Decision Basis
+* Risk Indicators
+
+### Step 6 — Send Notifications
+
+Automatically notify:
+
+* Applicants
+* Compliance Team
+* Underwriting Team
+
+---
+
+# 🧠 Loan Approval Rules
+
+| Rule               | Condition                                        |
+| ------------------ | ------------------------------------------------ |
+| Credit Score Check | Credit Score ≥ 600                               |
+| DTI Check          | DTI ≤ 0.50                                       |
+| Approval Rule      | Credit ≥ 600 AND DTI ≤ 0.50 AND Watchlist < 0.30 |
+| Rejection Rule     | Credit < 560 OR DTI > 0.55                       |
+| Manual Review Rule | Watchlist ≥ 0.30 AND < 0.80                      |
+| AML Escalation     | Watchlist ≥ 0.80                                 |
+| PEP Match Rule     | Immediate Compliance Review                      |
+
+---
+
+# 📊 Decision Classification
+
+| Status        | Description                             |
+| ------------- | --------------------------------------- |
+| Auto-Approve  | Meets all financial criteria            |
+| Auto-Reject   | High financial or compliance risk       |
+| Manual Review | Borderline or compliance-sensitive case |
+
+---
+
+# 📈 Dataset Summary
+
+| Metric              | Value |
+| ------------------- | ----- |
+| Total Applications  | 40    |
+| Auto Approved       | 18    |
+| Auto Rejected       | 11    |
+| Manual Review       | 11    |
+| Gmail Notifications | 4     |
+| Dataset Fields      | 10    |
+
+---
+
+# 📸 Project Screenshots
+
+## Loan Approval Dataset
+
+```html
+<img src="./loan-dataset.png" width="1000"/>
+```
+
+Shows:
+
+* Applicant Information
+* Credit Scores
+* DTI Ratios
+* Watchlist Results
+* System Decisions
+
+---
+
+## Auto Approval Email
+
+```html
+<img src="./approval-email.png" width="1000"/>
+```
+
+Automated approval notification sent to eligible applicants.
+
+---
+
+## Loan Rejection Email
+
+```html
+<img src="./rejection-email.png" width="1000"/>
+```
+
+Automated rejection notification generated for high-risk applicants.
+
+---
+
+## Compliance Review Email
+
+```html
+<img src="./compliance-review-email.png" width="1000"/>
+```
+
+Compliance team notification for AML/PEP review cases.
+
+---
+
+## n8n Workflow Architecture
+
+```html
+<img src="./n8n-workflow.png" width="1000"/>
+```
+
+Workflow showing:
+
+* Data Extraction
+* Conditional Logic
+* AML Screening
+* Decision Routing
+* Email Notifications
+
+---
+
+# 📊 Business Impact
+
+| Parameter            | Manual Process     | Automated Process |
+| -------------------- | ------------------ | ----------------- |
+| Processing Time      | 3–5 Days           | < 2 Minutes       |
+| Human Effort         | 100% Manual        | 73% Automated     |
+| Error Rate           | 35%                | < 3%              |
+| Cost Per Application | $2,400             | $180              |
+| Daily Throughput     | 20–30 Applications | 500+ Applications |
+| Compliance Coverage  | 60%                | 100%              |
 
 ### Key Improvements
 
-* 99.9% Faster Processing
-* 92% Cost Reduction
-* 91% Error Reduction
-* 17x Higher Throughput
-* 100% AML/PEP Coverage
+* ⚡ 99.9% Faster Processing
+* 💰 92% Cost Reduction
+* 📈 17x Throughput Increase
+* 🎯 91% Error Reduction
 
 ---
 
-## Challenges & Limitations
+# 🛠️ Tech Stack
 
-* Internet dependency for API connectivity
-* Data quality impacts decision accuracy
-* Gmail and Google Sheets API rate limits
-* Static rule-based decision logic
-* Scalability limitations in community edition
-
----
-
-## Future Scope
-
-### Phase 1
-
-* Automated Audit Logging
-
-### Phase 2
-
-* Machine Learning Credit Scoring
-* WhatsApp Notifications
-* Multi-Currency Support
-
-### Phase 3
-
-* LLM-Based Risk Assessment
-* CRM Integration (Salesforce/HubSpot)
+| Technology           | Purpose             |
+| -------------------- | ------------------- |
+| n8n                  | Workflow Automation |
+| Google Sheets        | Dataset Storage     |
+| Gmail                | Email Notifications |
+| JavaScript           | Business Logic      |
+| AML Screening Rules  | Compliance Checks   |
+| Credit Risk Analysis | Decision Making     |
 
 ---
 
-## Learning Outcomes
-
-* n8n Workflow Design
-* Financial Process Automation
-* Risk-Based Decision Systems
-* Dataset Engineering
-* AML & Compliance Screening
-* Business Process Mapping
-* FinTech Automation
-
----
-
-## Repository Structure
+# 📂 Repository Structure
 
 ```text
 loan-approval-automation/
 │
 ├── README.md
-├── loan-approval-workflow.json
-├── Loan_Approval_Automation.pptx
-├── dataset/
-│   └── loan_dataset.xlsx
-│
-├── screenshots/
-│   ├── workflow.png
-│   ├── gmail-notification.png
-│   └── results.png
-│
-└── documentation/
-    └── project-report.pdf
+├── Loan Approval Workflow.json
+├── Loan Approval Dataset.xlsx
+├── loan-dataset.png
+├── approval-email.png
+├── rejection-email.png
+├── compliance-review-email.png
+└── n8n-workflow.png
 ```
 
 ---
 
-## Team Members
+# 🚀 Run Locally
 
-* Bhumi Gupta
+### Clone Repository
+
+```bash
+git clone https://github.com/your-username/loan-approval-automation.git
+```
+
+### Open Project
+
+```text
+Open n8n
+↓
+Import Workflow JSON
+↓
+Connect Google Sheets Credentials
+↓
+Connect Gmail Credentials
+↓
+Execute Workflow
+```
+
+---
+
+# 🔮 Future Scope
+
+* Machine Learning Credit Scoring
+* Predictive Risk Assessment
+* WhatsApp Notifications
+* Salesforce CRM Integration
+* Real-Time Loan Dashboard
+* Multi-Currency Loan Processing
+* LLM-Based Risk Evaluation
+
+---
+
+# 🎓 Learning Outcomes
+
+* n8n Workflow Design
+* Financial Process Automation
+* AML & Compliance Monitoring
+* Credit Risk Assessment
+* Business Process Mapping
+* Workflow Decision Routing
+* FinTech Automation Concepts
+
+---
+
+# 👨‍💻 Developed By
+
+## Group 4 – MBA Applied Finance
+
+**Members:**
+
 * Muskan Garg
+* Bhumi Gupta
 * Manu Bansal
 * Vivek
 * Sandeep
 * Samridhi
 * Vansh
 
----
+**Course:** MBA Applied Finance
+**Subject:** Financial Technology & Automation
 
-## Course Information
-
-**MBA Applied Finance**
-Financial Technology & Automation
-
-Faculty Guide: **Prof. Lavanya Srivastava**
+**Faculty:** Prof. Lavanya Srivastava
 
 ---
 
-## Conclusion
+### ⭐ If you found this project useful, consider giving it a star.
 
-This project demonstrates how n8n can transform traditional loan approval operations into a scalable, compliant, and intelligent workflow. By automating credit evaluation, AML screening, and customer communication, organizations can significantly improve efficiency while maintaining regulatory compliance.
+### Screenshot file names to use in GitHub
 
-> "Automation is not about replacing humans — it is about freeing human intelligence for decisions that truly require it."
+Rename your screenshot files exactly like this:
 
+```text
+loan-dataset.png
+approval-email.png
+rejection-email.png
+compliance-review-email.png
+n8n-workflow.png
 ```
 
-This README is suitable for an MBA project submission, GitHub portfolio, and faculty evaluation.
-```
+Place all images in the **root folder** of the repository (same level as README.md). This will ensure GitHub displays them correctly.
