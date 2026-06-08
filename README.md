@@ -1,5 +1,3 @@
-You can create a file named **README.md** and paste the following content:
-
 # 🏦 AI-Powered Loan Approval Automation using n8n
 
 <p align="center">
