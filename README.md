@@ -144,7 +144,6 @@ Automatically notify:
 
 ## Loan Approval Dataset
 
-```html
 <img src="./loan_dataset.png" width="1000"/>
 ```
 
@@ -169,7 +168,6 @@ Automated approval notification sent to eligible applicants.
 
 ## Loan Rejection Email
 
-```html
 <img src="./rejection-email.png" width="1000"/>
 ```
 
@@ -179,7 +177,6 @@ Automated rejection notification generated for high-risk applicants.
 
 ## Compliance Review Email
 
-```html
 <img src="./compliance-review-email.png" width="1000"/>
 ```
 
@@ -189,7 +186,6 @@ Compliance team notification for AML/PEP review cases.
 
 ## n8n Workflow Architecture
 
-```html
 <img src="./n8n-workflow.png" width="1000"/>
 ```
 
